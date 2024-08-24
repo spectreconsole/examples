@@ -3,11 +3,11 @@ using Spectre.Console.Cli;
 
 namespace Injection.Infrastructure;
 
-public sealed class TypeResolver : ITypeResolver, IDisposable
+public sealed class MyTypeResolver : ITypeResolver, IDisposable
 {
     private readonly IServiceProvider _provider;
 
-    public TypeResolver(IServiceProvider provider)
+    public MyTypeResolver(IServiceProvider provider)
     {
         _provider = provider ?? throw new ArgumentNullException(nameof(provider));
     }

@@ -8,6 +8,24 @@ namespace Testing;
 public class ConsoleInputTests
 {
     [TestMethod]
+    public void Should_Render_Panel()
+    {
+        // Given
+        var console = new TestConsole();
+
+        // When
+        console.Write(new Panel(new Text("Hello World")));
+
+        // Then
+        Assert.AreEqual(console.Output, """"
+┌─────────────┐
+│ Hello World │
+└─────────────┘
+
+"""");
+    }
+
+    [TestMethod]
     public void Should_Select_Orange()
     {
         // Given

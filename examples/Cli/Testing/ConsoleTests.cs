@@ -5,7 +5,7 @@ using Spectre.Console.Testing;
 namespace Testing;
 
 [TestClass]
-public class ConsoleInputTests
+public class ConsoleTests
 {
     [TestMethod]
     public void Should_Render_Panel()

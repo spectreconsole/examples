@@ -4,18 +4,18 @@ using Spectre.Console.Cli;
 
 namespace Injection.Infrastructure;
 
-public sealed class TypeRegistrar : ITypeRegistrar
+public sealed class MyTypeRegistrar : ITypeRegistrar
 {
     private readonly IServiceCollection _builder;
 
-    public TypeRegistrar(IServiceCollection builder)
+    public MyTypeRegistrar(IServiceCollection builder)
     {
         _builder = builder;
     }
 
     public ITypeResolver Build()
     {
-        return new TypeResolver(_builder.BuildServiceProvider());
+        return new MyTypeResolver(_builder.BuildServiceProvider());
     }
 
     public void Register(Type service, Type implementation)

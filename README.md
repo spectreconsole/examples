@@ -5,17 +5,17 @@ To see `Spectre.Console` in action, install the
 global tool.
 
 ```
-> dotnet tool restore
+dotnet tool restore
 ```
 
 Now you can list available examples in this repository:
 
 ```
-> dotnet example
+dotnet example
 ```
 
 And to run an example:
 
 ```
-> dotnet example tables
+dotnet example tables
 ```

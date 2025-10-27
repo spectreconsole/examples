@@ -1,3 +1,4 @@
+using System.Threading;
 using Microsoft.Extensions.Logging;
 using Spectre.Console;
 using Spectre.Console.Cli;
@@ -23,7 +24,7 @@ public class HelloCommand : Command<HelloCommand.Settings>
     }
 
 
-    public override int Execute(CommandContext context, Settings settings)
+    public override int Execute(CommandContext context, Settings settings, CancellationToken cancellationToken)
     {
         _logger.LogInformation("Starting my command");
         AnsiConsole.MarkupLine($"Hello, [blue]{settings.Name}[/]");

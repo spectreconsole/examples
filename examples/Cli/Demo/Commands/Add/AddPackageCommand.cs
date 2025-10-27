@@ -1,4 +1,5 @@
 using System.ComponentModel;
+using System.Threading;
 using Demo.Utilities;
 using Spectre.Console.Cli;
 
@@ -38,7 +39,7 @@ public sealed class AddPackageCommand : Command<AddPackageCommand.Settings>
         public bool Interactive { get; set; }
     }
 
-    public override int Execute(CommandContext context, Settings settings)
+    public override int Execute(CommandContext context, Settings settings, CancellationToken cancellationToken)
     {
         SettingsDumper.Dump(settings);
         return 0;

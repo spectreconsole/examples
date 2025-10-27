@@ -12,7 +12,7 @@ public sealed class DefaultCommand : Command
         _console = console;
     }
 
-    public override int Execute(CommandContext context)
+    public override int Execute(CommandContext context, CancellationToken cancellationToken)
     {
         _console.WriteLine("Hello world");
         return 0;

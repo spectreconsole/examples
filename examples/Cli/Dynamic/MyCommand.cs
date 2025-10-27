@@ -1,4 +1,5 @@
 using System;
+using System.Threading;
 using Spectre.Console;
 using Spectre.Console.Cli;
 
@@ -6,7 +7,7 @@ namespace Dynamic;
 
 public sealed class MyCommand : Command
 {
-    public override int Execute(CommandContext context)
+    public override int Execute(CommandContext context, CancellationToken cancellationToken)
     {
         if (!(context.Data is int data))
         {

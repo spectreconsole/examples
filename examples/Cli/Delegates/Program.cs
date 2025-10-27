@@ -1,3 +1,4 @@
+using System.Threading;
 using System.Threading.Tasks;
 using Spectre.Console;
 using Spectre.Console.Cli;
@@ -27,13 +28,13 @@ public static partial class Program
         return app.Run(args);
     }
 
-    private static int Foo(CommandContext context)
+    private static int Foo(CommandContext context, CancellationToken cancellationToken)
     {
         AnsiConsole.WriteLine("Foo");
         return 0;
     }
 
-    private static int Bar(CommandContext context, BarSettings settings)
+    private static int Bar(CommandContext context, BarSettings settings, CancellationToken cancellationToken)
     {
         for (var index = 0; index < settings.Count; index++)
         {
@@ -43,13 +44,13 @@ public static partial class Program
         return 0;
     }
 
-    private static Task<int> FooAsync(CommandContext context)
+    private static Task<int> FooAsync(CommandContext context, CancellationToken cancellationToken)
     {
         AnsiConsole.WriteLine("Foo");
         return Task.FromResult(0);
     }
 
-    private static Task<int> BarAsync(CommandContext context, BarSettings settings)
+    private static Task<int> BarAsync(CommandContext context, BarSettings settings, CancellationToken cancellationToken)
     {
         for (var index = 0; index < settings.Count; index++)
         {

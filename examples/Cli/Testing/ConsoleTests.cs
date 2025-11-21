@@ -16,12 +16,13 @@ public class ConsoleTests
         console.Write(new Panel(new Text("Hello World")));
 
         // Then
-        Assert.AreEqual(console.Output, """"
-┌─────────────┐
-│ Hello World │
-└─────────────┘
+        Assert.AreEqual(
+            """
+            ┌─────────────┐
+            │ Hello World │
+            └─────────────┘
 
-"""");
+            """, console.Output);
     }
 
     [TestMethod]
@@ -38,6 +39,6 @@ public class ConsoleTests
                 .AddChoice("Orange"));
 
         // Then
-        Assert.AreEqual(console.Output, "Favorite fruit? [Banana/Orange]: Orange\n");
+        Assert.AreEqual("Favorite fruit? [Banana/Orange]: Orange\n", console.Output);
     }
 }

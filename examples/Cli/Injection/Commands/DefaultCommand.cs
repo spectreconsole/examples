@@ -1,5 +1,6 @@
 using System;
 using System.ComponentModel;
+using System.Threading;
 using Spectre.Console.Cli;
 
 namespace Injection.Commands;
@@ -21,7 +22,7 @@ public sealed class DefaultCommand : Command<DefaultCommand.Settings>
         _greeter = greeter ?? throw new ArgumentNullException(nameof(greeter));
     }
 
-    public override int Execute(CommandContext context, Settings settings)
+    protected override int Execute(CommandContext context, Settings settings, CancellationToken cancellationToken)
     {
         _greeter.Greet(settings.Name);
         return 0;

@@ -1,0 +1,48 @@
+<Solution>
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Folder Name="/Cli/">
+    <Project Path="Cli/Delegates/Delegates.csproj" />
+    <Project Path="Cli/Demo/Demo.csproj" />
+    <Project Path="Cli/Dynamic/Dynamic.csproj" />
+    <Project Path="Cli/Help/Help.csproj" />
+    <Project Path="Cli/Injection/Injection.csproj" />
+    <Project Path="Cli/Logging/Logging.csproj" />
+    <Project Path="Cli/Testing/Testing.csproj" />
+  </Folder>
+  <Folder Name="/Shared/">
+    <Project Path="Shared/Shared.csproj" />
+  </Folder>
+  <Project Path="Console/AlternateScreen/AlternateScreen.csproj" />
+  <Project Path="Console/Borders/Borders.csproj" />
+  <Project Path="Console/Calendars/Calendars.csproj" />
+  <Project Path="Console/Canvas/Canvas.csproj" />
+  <Project Path="Console/Charts/Charts.csproj" />
+  <Project Path="Console/Colors/Colors.csproj" />
+  <Project Path="Console/Columns/Columns.csproj" />
+  <Project Path="Console/Cursor/Cursor.csproj" />
+  <Project Path="Console/Decorations/Decorations.csproj" />
+  <Project Path="Console/Emojis/Emojis.csproj" />
+  <Project Path="Console/Exceptions/Exceptions.csproj" />
+  <Project Path="Console/Figlet/Figlet.csproj" />
+  <Project Path="Console/Grids/Grids.csproj" />
+  <Project Path="Console/Info/Info.csproj" />
+  <Project Path="Console/Json/Json.csproj" />
+  <Project Path="Console/Layout/Layout.csproj" />
+  <Project Path="Console/Links/Links.csproj" />
+  <Project Path="Console/Live/Live.csproj" />
+  <Project Path="Console/LiveTable/LiveTable.csproj" />
+  <Project Path="Console/Minimal/Minimal.csproj" />
+  <Project Path="Console/Panels/Panels.csproj" />
+  <Project Path="Console/Paths/Paths.csproj" />
+  <Project Path="Console/Progress/Progress.csproj" />
+  <Project Path="Console/Prompt/Prompt.csproj" />
+  <Project Path="Console/Rules/Rules.csproj" />
+  <Project Path="Console/Showcase/Showcase.csproj" />
+  <Project Path="Console/Status/Status.csproj" />
+  <Project Path="Console/Tables/Tables.csproj" />
+  <Project Path="Console/Trees/Trees.csproj" />
+</Solution>

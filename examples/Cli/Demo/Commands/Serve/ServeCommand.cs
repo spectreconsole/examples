@@ -1,5 +1,6 @@
 using System;
 using System.ComponentModel;
+using System.Threading;
 using Demo.Utilities;
 using Spectre.Console.Cli;
 
@@ -19,7 +20,7 @@ public sealed class ServeCommand : Command<ServeCommand.Settings>
         public FlagValue<string> OpenBrowser { get; set; }
     }
 
-    public override int Execute(CommandContext context, Settings settings)
+    protected override int Execute(CommandContext context, Settings settings, CancellationToken cancellationToken)
     {
         if (settings.OpenBrowser.IsSet)
         {

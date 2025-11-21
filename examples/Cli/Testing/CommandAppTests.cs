@@ -1,5 +1,6 @@
 using Spectre.Console;
 using Spectre.Console.Cli;
+using Spectre.Console.Cli.Testing;
 using Spectre.Console.Testing;
 
 namespace Testing;
@@ -23,7 +24,7 @@ public class CommandAppTests
             _console = console;
         }
 
-        public override int Execute(CommandContext context)
+        protected override int Execute(CommandContext context, CancellationToken cancellationToken)
         {
             _console.WriteLine("Hello world.");
             return 0;
@@ -41,7 +42,7 @@ public class CommandAppTests
         var result = app.Run();
 
         // Then
-        Assert.AreEqual(result.ExitCode, 0);
-        Assert.AreEqual(result.Output, "Hello world.");
+        Assert.AreEqual(0, result.ExitCode);
+        Assert.AreEqual("Hello world.", result.Output);
     }
 }

@@ -1,20 +1,15 @@
+#:sdk Cake.Sdk@6.0.0
+
 var target = Argument("target", "Default");
 var configuration = Argument("configuration", "Release");
 
 ////////////////////////////////////////////////////////////////
 // Tasks
 
-Task("Clean")
-    .Does(context =>
-{
-    context.CleanDirectory("./.artifacts");
-});
-
 Task("Build")
-    .IsDependentOn("Clean")
     .Does(context => 
 {
-    DotNetBuild("./examples/Examples.sln", new DotNetBuildSettings {
+    DotNetBuild("./examples/Examples.slnx", new DotNetBuildSettings {
         Configuration = configuration,
         Verbosity = DotNetVerbosity.Minimal,
         NoLogo = true,
@@ -28,9 +23,9 @@ Task("Build")
 // Targets
 
 Task("Default")
-    .IsDependentOn("Package");
+    .IsDependentOn("Build");
 
 ////////////////////////////////////////////////////////////////
 // Execution
 
-RunTarget(target)
+RunTarget(target);

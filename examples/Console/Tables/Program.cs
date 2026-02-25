@@ -6,7 +6,9 @@ public static class Program
 {
     public static void Main()
     {
-        AnsiConsole.Write(CreateTable());
+        AnsiConsole.Write(
+            Align.Center(
+            CreateTable()));
     }
 
     private static Table CreateTable()
@@ -32,7 +34,6 @@ public static class Program
             .AddRow("[blue]Hej[/]", "[yellow]Världen![/]", "");
 
         return new Table()
-            .Centered()
             .Border(TableBorder.DoubleEdge)
             .Title("TABLE [yellow]TITLE[/]")
             .Caption("TABLE [yellow]CAPTION[/]")

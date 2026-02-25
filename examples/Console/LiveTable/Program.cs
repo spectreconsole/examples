@@ -23,6 +23,13 @@ public static class Program
 
     public static async Task Main(string[] args)
     {
+        var running = true;
+        Console.CancelKeyPress += (s, e) =>
+        {
+            running = false;
+            e.Cancel = true;
+        };
+
         var table = new Table().Expand().BorderColor(Color.Grey);
         table.AddColumn("[yellow]Source currency[/]");
         table.AddColumn("[yellow]Destination currency[/]");
@@ -36,27 +43,27 @@ public static class Program
             .Cropping(VerticalOverflowCropping.Bottom)
             .StartAsync(async ctx =>
             {
-                    // Add some initial rows
-                    foreach (var _ in Enumerable.Range(0, NumberOfRows))
+                // Add some initial rows
+                foreach (var _ in Enumerable.Range(0, NumberOfRows))
                 {
                     AddExchangeRateRow(table);
                 }
 
-                    // Continously update the table
-                    while (true)
+                // Continously update the table
+                while (running)
                 {
-                        // More rows than we want?
-                        if (table.Rows.Count > NumberOfRows)
+                    // More rows than we want?
+                    if (table.Rows.Count > NumberOfRows)
                     {
-                            // Remove the first one
-                            table.Rows.RemoveAt(0);
+                        // Remove the first one
+                        table.Rows.RemoveAt(0);
                     }
 
-                        // Add a new row
-                        AddExchangeRateRow(table);
+                    // Add a new row
+                    AddExchangeRateRow(table);
 
-                        // Refresh and wait for a while
-                        ctx.Refresh();
+                    // Refresh and wait for a while
+                    ctx.Refresh();
                     await Task.Delay(400);
                 }
             });

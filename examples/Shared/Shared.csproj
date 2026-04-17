@@ -7,12 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Spectre.Console" Version="0.55.1" />
+    <PackageReference Include="Spectre.Console" Version="0.55.2" />
     <PackageReference Include="Spectre.Console.Cli" Version="1.0.0-alpha.0.7" />
     <PackageReference Include="Spectre.Console.Cli.Testing" Version="1.0.0-alpha.0.7" />
-    <PackageReference Include="Spectre.Console.ImageSharp" Version="0.55.1" />
-    <PackageReference Include="Spectre.Console.Json" Version="0.55.1" />
-    <PackageReference Include="Spectre.Console.Testing" Version="0.55.1" />
+    <PackageReference Include="Spectre.Console.ImageSharp" Version="0.55.2" />
+    <PackageReference Include="Spectre.Console.Json" Version="0.55.2" />
+    <PackageReference Include="Spectre.Console.Testing" Version="0.55.2" />
   </ItemGroup>
 
 </Project>
